@@ -18,23 +18,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navController = findNavController(R.id.navHostFragment)
-
-//        // Configuração da Toolbar
-//        val toolbar: Toolbar = findViewById(R.id.toolbar)
-//        setSupportActionBar(toolbar)
-
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.recipesFragment,
-                R.id.favoriteFragment
+                R.id.favoriteFragment,
             )
         )
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
 
-        // Configuração da BottomNavigationView com NavController
         bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
