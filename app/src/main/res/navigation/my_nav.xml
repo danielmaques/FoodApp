@@ -6,17 +6,17 @@
     app:startDestination="@id/recipesFragment">
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.example.foodsapp.RecipesFragment"
+        android:name="com.example.foodsapp.ui.fragments.RecipesFragment"
         android:label="@string/recipes"
         tools:layout="@layout/fragment_recipes" />
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.example.foodsapp.FavoriteFragment"
+        android:name="com.example.foodsapp.ui.fragments.FavoriteFragment"
         android:label="@string/favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/foodFragment"
-        android:name="com.example.foodsapp.FoodFragment"
+        android:name="com.example.foodsapp.ui.fragments.FoodFragment"
         android:label="fragment_food"
         tools:layout="@layout/fragment_food" />
 </navigation>
