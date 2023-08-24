@@ -1,8 +1,7 @@
 package com.example.foodsapp.di
 
-import android.icu.util.TimeUnit
-import com.example.foodsapp.Constants.Companion.BASE_URL
-import com.example.foodsapp.FoodRecipesApi
+import com.example.foodsapp.uitl.Constants.Companion.BASE_URL
+import com.example.foodsapp.data.network.FoodRecipesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,6 +9,7 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module

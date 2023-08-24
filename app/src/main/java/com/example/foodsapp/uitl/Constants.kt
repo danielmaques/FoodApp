@@ -1,4 +1,4 @@
-package com.example.foodsapp
+package com.example.foodsapp.uitl
 
 class Constants {
 
