@@ -2,7 +2,6 @@ package com.example.foodsapp.models
 
 data class Result(
     val aggregateLikes: Int,
-    val analyzedInstructions: List<AnalyzedInstruction>,
     val cheap: Boolean,
     val cookingMinutes: Int,
     val creditsText: String,
