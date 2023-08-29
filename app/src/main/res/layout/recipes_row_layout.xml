@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="result"
             type="com.example.foodsapp.models.Result" />
@@ -56,7 +55,7 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/courgette"
                     android:maxLines="2"
-                    android:text="TextView"
+                    android:text="@{result.title}"
                     android:textColor="@color/darker"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -72,7 +71,7 @@
                     android:layout_marginTop="6dp"
                     android:ellipsize="end"
                     android:maxLines="3"
-                    android:text="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                    android:text="@{result.summary}"
                     android:textColor="@color/darkGray"
 
                     app:layout_constraintEnd_toEndOf="@+id/recipeTitle"
@@ -96,6 +95,7 @@
 
                 <TextView
                     android:id="@+id/favoriteNumberText"
+                    setNumberOfLikes="@{result.aggregateLikes}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="100"
@@ -105,6 +105,7 @@
 
                 <TextView
                     android:id="@+id/timeNumterText"
+                    setNumberTime="@{result.readyInMinutes}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
