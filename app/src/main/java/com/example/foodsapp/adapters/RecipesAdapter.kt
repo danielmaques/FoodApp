@@ -1,20 +1,22 @@
-package com.example.foodsapp.adapters
+package com.example.foody.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodsapp.databinding.RecipesRowLayoutBinding
 import com.example.foodsapp.models.FoodRecipes
 import com.example.foodsapp.models.Result
+import com.example.foody.util.RecipesDiffUtil
 
-class RecipesAdapter() : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
+class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
-    private var recipe = emptyList<Result>()
+    private var recipes = emptyList<Result>()
 
     class MyViewHolder(private val binding: RecipesRowLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(result: Result) {
+        fun bind(result: Result){
             binding.result = result
             binding.executePendingBindings()
         }
@@ -29,21 +31,24 @@ class RecipesAdapter() : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesAdapter.MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder.from(parent)
     }
 
-    override fun onBindViewHolder(holder: RecipesAdapter.MyViewHolder, position: Int) {
-        val currentResolt = recipe[position]
-        holder.bind(currentResolt)
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        val currentRecipe = recipes[position]
+        holder.bind(currentRecipe)
     }
 
     override fun getItemCount(): Int {
-        return recipe.size
+        return recipes.size
     }
 
-    fun setData(newData: FoodRecipes) {
-        recipe = newData.results
+    fun setData(newData: FoodRecipes){
+        val recipesDiffUtil =
+            RecipesDiffUtil(recipes, newData.results)
+        val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
+        recipes = newData.results
+        diffUtilResult.dispatchUpdatesTo(this)
     }
-
 }
