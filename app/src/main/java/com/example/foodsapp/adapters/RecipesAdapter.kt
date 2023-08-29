@@ -42,7 +42,7 @@ class RecipesAdapter() : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
         return recipe.size
     }
 
-    fun setData(newData: FoodRecipes){
+    fun setData(newData: FoodRecipes) {
         recipe = newData.results
     }
 
