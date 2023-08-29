@@ -9,6 +9,10 @@ android {
     namespace = "com.example.foodsapp"
     compileSdk = 34
 
+    buildFeatures {
+        dataBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.foodsapp"
         minSdk = 27
