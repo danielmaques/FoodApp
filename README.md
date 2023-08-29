@@ -20,12 +20,6 @@ The "Food App" is an Android application designed for culinary enthusiasts and a
 - **Dependency Injection:** Dagger-Hilt
 - **UI/UX:** Material Design, Motion Layout, Shimmer Effect
 
-## Getting Started
-1. Clone the repository to your local machine.
-2. Open the project in Android Studio.
-3. Install all necessary dependencies.
-4. Run the app on an emulator or Android device.
-
 ## Contributions
 Contributions are welcome! If you've found a bug or wish to add a new feature, feel free to create a pull request.
 
